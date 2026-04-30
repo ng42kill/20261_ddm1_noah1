@@ -1,98 +1,91 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import React from 'react';
+// 1. IMPORTANTE: Adicionei 'Image' na lista de imports
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+    <View style={styles.background}>      
+      
+      <ScrollView 
+        style={styles.background} 
+        contentContainerStyle={styles.container}
+      >
+        {/* 2. A IMAGEM NO TOPO: */}
+        <Image 
+          // Usamos uma URI para pegar uma logo genérica de tecnologia da internet
+          source={{ uri: 'https://cdn-icons-png.flaticon.com/512/2010/2010957.png' }} 
+          style={styles.logo}
+          // resizeMode garante que a imagem não fique esticada ou cortada
+          resizeMode="contain" 
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+        {/* O título agora fica embaixo da imagem */}
+        <Text style={styles.titulo}>INFORMÁTICA PARA INTERNET</Text>
+        
+        <View style={styles.card}>
+          <Text style={styles.subtitulo}>Desenvolvimento para Dispositivos Móveis</Text>
+          <Text style={styles.descricao}>
+            Projeto mobile em react-native
+          </Text>
+        </View>
+
+        <Text style={styles.textoFundo}>Arraste para ver mais</Text>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  background: {
+    flex: 1,
+    backgroundColor: '#001a33', 
+  },
+  container: {
+    flexGrow: 1,
+    padding: 30,
     alignItems: 'center',
-    gap: 8,
+    justifyContent: 'center', 
+    gap: 20,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  // 3. O ESTILO DA LOGO:
+  logo: {
+    width: 100,           // Largura da imagem
+    height: 100,          // Altura da imagem
+    marginBottom: 10,     // Espaço entre a logo e o título
+    // Se a imagem tiver fundo branco, podemos tentar dar um filtro (opcional)
+    // tintColor: '#00d4ff', // Descomente para pintar a logo de azul ciano
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  titulo: {
+    color: '#00d4ff', 
+    fontSize: 28,         // Reduzi um pouco para caber com a logo
+    fontWeight: 'bold',
+    letterSpacing: 2,
+    textTransform: 'uppercase', // Garante que fique tudo em maiúsculo 
   },
+  card: {
+    backgroundColor: 'rgba(255, 255, 255, 0.1)', 
+    padding: 20,
+    borderRadius: 15,
+    width: '100%',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#00d4ff',
+  },
+  subtitulo: {
+    color: '#FFF',
+    fontSize: 20,
+    fontWeight: '600',
+  },
+  descricao: {
+    color: '#ccc',
+    textAlign: 'center',
+    marginTop: 10,
+    lineHeight: 22,
+  },
+  textoFundo: {
+    color: '#555',
+    fontSize: 12,
+    marginTop: 20,
+    textTransform: 'uppercase',
+  }
 });
