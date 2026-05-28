@@ -1,30 +1,6 @@
-import React from 'react';
 // 1. IMPORTANTE: Adicionei 'Image' na lista de imports
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-
-export default function HomeScreen() {
-  return (
-    <View style={styles.background}>      
-      
-      <ScrollView 
-        style={styles.background} 
-        contentContainerStyle={styles.container}
-      >
-
-        {/* O título agora fica embaixo da imagem */}
-        <Text style={styles.titulo}>2° MIN</Text>
-        
-        <View style={styles.card}>
-          <Text style={styles.subtitulo}>Progamador de Informática</Text>
-          <Text style={styles.descricao}>
-            Projetos com PHP, JQuery, e React Native.
-          </Text>
-        </View>
-      </ScrollView>
-    </View>
-  );
-}
-
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 const styles = StyleSheet.create({
   background: {
     flex: 1,
@@ -33,15 +9,14 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     padding: 30,
-    alignItems: 'center',
-    justifyContent: 'center', 
+    alignItems: 'center', 
     gap: 20,
   },
   // 3. O ESTILO DA LOGO:
   logo: {
-    width: 100,           // Largura da imagem
-    height: 100,          // Altura da imagem
-    marginBottom: 10,     // Espaço entre a logo e o título
+    width: 500,           // Largura da imagem
+    height: 520,          // Altura da imagem
+    marginBottom: 30,     // Espaço entre a logo e o título
     // Se a imagem tiver fundo branco, podemos tentar dar um filtro (opcional)
     // tintColor: '#00d4ff', // Descomente para pintar a logo de azul ciano
   },
@@ -79,3 +54,34 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   }
 });
+
+export default function HomeScreen() {
+  return (
+    <View style={styles.background}>      
+      
+      <ScrollView 
+        style={styles.background} 
+        contentContainerStyle={styles.container}
+      >
+
+        {/* O título agora fica embaixo da imagem */}
+        <Text style={styles.titulo}>2° MIN</Text>
+        
+        <View style={styles.card}>
+          <Text style={styles.subtitulo}>Progamador de Computador</Text>
+          <Text style={styles.descricao}>
+            Projetos com PHP, JQuery, React Native, MySQL e USBWebserver, Desenvolvimento em Front e Back end
+          </Text>
+        </View>
+        <Image 
+          // Usamos uma URI para pegar uma logo genérica de tecnologia da internet
+          source={{ uri: 'https://blog.hubdodesenvolvedor.com.br/wp-content/uploads/2024/03/capa-linguagens-em-alta.jpg' }} 
+          style={styles.logo}
+          // resizeMode garante que a imagem não fique esticada ou cortada
+          resizeMode="contain" 
+        />
+      </ScrollView>
+    </View>
+  );
+}
+

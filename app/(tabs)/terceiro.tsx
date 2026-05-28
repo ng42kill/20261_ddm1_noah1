@@ -1,30 +1,6 @@
-import React from 'react';
 // 1. IMPORTANTE: Adicionei 'Image' na lista de imports
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-
-export default function HomeScreen() {
-  return (
-    <View style={styles.background}>      
-      
-      <ScrollView 
-        style={styles.background} 
-        contentContainerStyle={styles.container}
-      >
-
-        {/* O título agora fica embaixo da imagem */}
-        <Text style={styles.titulo}>3° MIN</Text>
-        
-        <View style={styles.card}>
-          <Text style={styles.subtitulo}>Técnico de Informática para Intenet</Text>
-          <Text style={styles.descricao}>
-            Machine Learning, Integração das 3 Leis Robóticas, IAs em Mercados de Trabalho.
-          </Text>
-        </View>
-      </ScrollView>
-    </View>
-  );
-}
-
+import React from 'react';
+import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 const styles = StyleSheet.create({
   background: {
     flex: 1,
@@ -39,9 +15,9 @@ const styles = StyleSheet.create({
   },
   // 3. O ESTILO DA LOGO:
   logo: {
-    width: 100,           // Largura da imagem
-    height: 100,          // Altura da imagem
-    marginBottom: 10,     // Espaço entre a logo e o título
+    width: 500,           // Largura da imagem
+    height: 520,          // Altura da imagem
+    marginBottom: 30,     // Espaço entre a logo e o título
     // Se a imagem tiver fundo branco, podemos tentar dar um filtro (opcional)
     // tintColor: '#00d4ff', // Descomente para pintar a logo de azul ciano
   },
@@ -79,3 +55,33 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   }
 });
+export default function HomeScreen() {
+  return (
+    <View style={styles.background}>      
+      
+      <ScrollView 
+        style={styles.background} 
+        contentContainerStyle={styles.container}
+      >
+
+        {/* O título agora fica embaixo da imagem */}
+        <Text style={styles.titulo}>3° MIN</Text>
+        
+        <View style={styles.card}>
+          <Text style={styles.subtitulo}>Técnico de Informática para Intenet</Text>
+          <Text style={styles.descricao}>
+            Desenvolvimento Web, Aplicações Mobile, Banco de Dados, Usabilidade e Design, Manutenção e Segurança.
+          </Text>
+        </View>
+        <Image 
+                  // Usamos uma URI para pegar uma logo genérica de tecnologia da internet
+                  source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpXffzKCh2AIsEULVFQxl_zYJZ0BdBWDQSgQ&s' }} 
+                  style={styles.logo}
+                  // resizeMode garante que a imagem não fique esticada ou cortada
+                  resizeMode="contain" 
+                />
+      </ScrollView>
+    </View>
+  );
+}
+

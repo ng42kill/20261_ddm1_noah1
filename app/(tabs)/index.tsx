@@ -1,5 +1,5 @@
-import React from 'react';
 // 1. IMPORTANTE: Adicionei 'Image' na lista de imports
+import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
@@ -29,13 +29,13 @@ export default function HomeScreen() {
           </Text>
         </View>
 
-        <Text style={styles.textoFundo}>Arraste para ver mais</Text>
+        <Text style={styles.textoFundo}>veja os ícones abaixo</Text>
       </ScrollView>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   background: {
     flex: 1,
     backgroundColor: '#001a33', 

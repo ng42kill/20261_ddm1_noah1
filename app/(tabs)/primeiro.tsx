@@ -1,6 +1,6 @@
-import React from 'react';
 // 1. IMPORTANTE: Adicionei 'Image' na lista de imports
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 
 export default function HomeScreen() {
   return (
@@ -17,9 +17,16 @@ export default function HomeScreen() {
         <View style={styles.card}>
           <Text style={styles.subtitulo}>Auxiliar Técnico em Informática</Text>
           <Text style={styles.descricao}>
-            Projetos em HTML, CSS e JavaScript.
+            Projetos em HTML, CSS e JavaScript, Manutenção preventiva em computadores, instalação e configuração de sistemas.
           </Text>
         </View>
+        <Image 
+                  // Usamos uma URI para pegar uma logo genérica de tecnologia da internet
+                  source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLf205LEgc3KaI19ucXJPqFMIPLpzTREdIIg&s' }} 
+                  style={styles.logo}
+                  // resizeMode garante que a imagem não fique esticada ou cortada
+                  resizeMode="contain" 
+                />
       </ScrollView>
     </View>
   );
@@ -39,9 +46,9 @@ const styles = StyleSheet.create({
   },
   // 3. O ESTILO DA LOGO:
   logo: {
-    width: 100,           // Largura da imagem
-    height: 100,          // Altura da imagem
-    marginBottom: 10,     // Espaço entre a logo e o título
+    width: 500,           // Largura da imagem
+    height: 520,          // Altura da imagem
+    marginBottom: 30,     // Espaço entre a logo e o título
     // Se a imagem tiver fundo branco, podemos tentar dar um filtro (opcional)
     // tintColor: '#00d4ff', // Descomente para pintar a logo de azul ciano
   },
