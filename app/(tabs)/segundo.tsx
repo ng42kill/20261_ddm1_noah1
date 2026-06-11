@@ -1,6 +1,6 @@
 // 1. IMPORTANTE: Adicionei 'Image' na lista de imports
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 const styles = StyleSheet.create({
   background: {
     flex: 1,
@@ -68,7 +68,7 @@ export default function HomeScreen() {
         <Text style={styles.titulo}>2° MIN</Text>
         
         <View style={styles.card}>
-          <Text style={styles.subtitulo}>Progamador de Computador</Text>
+          <Text style={styles.subtitulo}>Programador de Computador</Text>
           <Text style={styles.descricao}>
             Projetos com PHP, JQuery, React Native, MySQL e USBWebserver, Desenvolvimento em Front e Back end
           </Text>
@@ -80,6 +80,22 @@ export default function HomeScreen() {
           // resizeMode garante que a imagem não fique esticada ou cortada
           resizeMode="contain" 
         />
+
+
+
+
+
+
+
+
+
+        <View>
+          <View>
+            <View>
+              <Text></Text>
+            </View>
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
