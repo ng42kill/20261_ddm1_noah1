@@ -1,7 +1,7 @@
 // 1. IMPORTANTE: Adicionei 'Image' na lista de imports
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-// TESTE DE COMMIT
+// TESTE DE COMMIT 2
 export default function HomeScreen() {
   return (
     <View style={styles.background}>      
