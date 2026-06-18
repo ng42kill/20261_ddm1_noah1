@@ -80,22 +80,6 @@ export default function HomeScreen() {
           // resizeMode garante que a imagem não fique esticada ou cortada
           resizeMode="contain" 
         />
-
-
-
-
-
-
-
-
-
-        <View>
-          <View>
-            <View>
-              <Text></Text>
-            </View>
-          </View>
-        </View>
       </ScrollView>
     </View>
   );

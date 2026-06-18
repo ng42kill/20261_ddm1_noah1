@@ -29,17 +29,46 @@ export default function HomeScreen() {
           </Text>
         </View>
 
-        <Text style={styles.textoFundo}>veja os ícones abaixo</Text>
+        <Text style={styles.textoFundo}>veja a tabela abaixo</Text>
+
+
+        <View style={styles.page}>
+          <View style={styles.tabelaContainer}>
+            <View style={[styles.linha, styles.cabecalho]}>
+              <Text style={[styles.celula, styles.textoCabecalho, {flex: 0.8}]}>HORA</Text>
+              <Text style={[styles.celula, styles.textoCabecalho]}>SEG</Text>
+              <Text style={[styles.celula, styles.textoCabecalho]}>TER</Text>
+              <Text style={[styles.celula, styles.textoCabecalho]}>QUA</Text>
+              <Text style={[styles.celula, styles.textoCabecalho]}>QUI</Text>
+              <Text style={[styles.celula, styles.textoCabecalho]}>SEX</Text>
+            </View>
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
 }
-
+const horarios = {
+  hora: [800, 850, 1000, 1050, 1140, 1330, 1420, 1510],
+  segunda: ["Sistemas Web", "Sistemas Web", "Portugues", "Portugues", "Biologia", "EACMT", "Portugues", "N/A"],
+  terca: ["Quimica", "Quimica", "Aula3", "Aula4", "Aula5", "Aula6", "Aula7", "N/A"],
+  quarta: ["Historia", "Historia", "CNW", "CNW", "LPC", "Fisica", "LPC", "N/A"],
+  quinta: ["DDM", "DDM", "Matematica", "Matematica", "Ingles", "Edu Fisica", "Edu Fisica", "N/A"],
+  sexta: ["Banco de Dados", "Banco de Dados", "Aula3", "Aula4", "Ingles", "Fisica", "Geografia", "Geografia"],
+}
 export const styles = StyleSheet.create({
   background: {
     flex: 1,
     backgroundColor: '#001a33', 
   },
+  celula: {},
+  page: {
+    alignItems: 'center',
+  },
+  textoCabecalho: {},
+  linha: {},
+  cabecalho: {},
+  tabelaContainer: {},
   container: {
     flexGrow: 1,
     padding: 30,
