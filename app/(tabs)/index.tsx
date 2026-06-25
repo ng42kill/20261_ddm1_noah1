@@ -35,12 +35,12 @@ export default function HomeScreen() {
         <View style={styles.page}>
           <View style={styles.tabelaContainer}>
             <View style={[styles.linha, styles.cabecalho]}>
-              <Text style={[styles.celula, styles.textoCabecalho, {flex: 0.8}]}>HORA</Text>
-              <Text style={[styles.celula, styles.textoCabecalho]}>SEG</Text>
-              <Text style={[styles.celula, styles.textoCabecalho]}>TER</Text>
-              <Text style={[styles.celula, styles.textoCabecalho]}>QUA</Text>
-              <Text style={[styles.celula, styles.textoCabecalho]}>QUI</Text>
-              <Text style={[styles.celula, styles.textoCabecalho]}>SEX</Text>
+              <Text style={[styles.celula, styles.textoCabecalho, {flex: 0.8}]}>HORA | 8:00 | 8:50 | 10:00 | 10:50 | 11:40 | 13:30 | 14:20 | 15:10</Text>
+              <Text style={[styles.celula, styles.textoCabecalho]}>SEG | WEB | WEB | POR | POR | BIO | EAC | POR | N/A</Text>
+              <Text style={[styles.celula, styles.textoCabecalho]}>TER | QUI | QUI | SLA | SLA | SLA | SLA | SLA | N/A</Text>
+              <Text style={[styles.celula, styles.textoCabecalho]}>QUA | HIS | HIS | CNW | CNW | LPC | FIS | LPC | N/A</Text>
+              <Text style={[styles.celula, styles.textoCabecalho]}>QUI | DDM | DDM | MAT | MAT | ING | EDF | EDF | N/A</Text>
+              <Text style={[styles.celula, styles.textoCabecalho]}>SEX | BDD | BDD | SLA | SLA | ING | FIS | GEO | GEO</Text>
             </View>
           </View>
         </View>
